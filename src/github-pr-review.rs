@@ -20,8 +20,8 @@ pub async fn on_deploy() {
     logger::init();
     log::debug!("Running github-pr-review/main");
 
-    let owner = env::var("github_owner").unwrap_or("juntao".to_string());
-    let repo = env::var("github_repo").unwrap_or("test".to_string());
+    let owner = env::var("github_owner").unwrap_or("staru09".to_string());
+    let repo = env::var("github_repo").unwrap_or("LFX_test".to_string());
 
     listen_to_event(&GithubLogin::Default, &owner, &repo, vec!["pull_request", "issue_comment"]).await;
 }
@@ -32,8 +32,8 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
     logger::init();
     log::debug!("Running github-pr-review/main handler()");
 
-    let owner = env::var("github_owner").unwrap_or("juntao".to_string());
-    let repo = env::var("github_repo").unwrap_or("test".to_string());
+    let owner = env::var("github_owner").unwrap_or("staru09".to_string());
+    let repo = env::var("github_repo").unwrap_or("LFX_test".to_string());
     let trigger_phrase = env::var("trigger_phrase").unwrap_or("flows review".to_string());
     let llm_api_endpoint = env::var("llm_api_endpoint").unwrap_or("https://api.openai.com/v1".to_string());
     let llm_model_name = env::var("llm_model_name").unwrap_or("gpt-4o".to_string());
