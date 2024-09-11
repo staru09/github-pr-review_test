@@ -34,10 +34,10 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
 
     let owner = env::var("github_owner").unwrap_or("staru09".to_string());
     let repo = env::var("github_repo").unwrap_or("LFX_test".to_string());
-    let trigger_phrase = env::var("trigger_phrase").unwrap_or("flows review".to_string());
-    let llm_api_endpoint = env::var("llm_api_endpoint").unwrap_or("https://api.openai.com/v1".to_string());
-    let llm_model_name = env::var("llm_model_name").unwrap_or("gpt-4o".to_string());
-    let llm_ctx_size = env::var("llm_ctx_size").unwrap_or("16384".to_string()).parse::<u32>().unwrap_or(0);
+    let trigger_phrase = env::var("trigger_phrase").unwrap_or("review".to_string());
+    let llm_api_endpoint = env::var("llm_api_endpoint").unwrap_or("https://yicoder9b.us.gaianet.network/v1".to_string());
+    let llm_model_name = env::var("llm_model_name").unwrap_or("yicoder9b".to_string());
+    let llm_ctx_size = env::var("llm_ctx_size").unwrap_or("110000".to_string()).parse::<u32>().unwrap_or(0);
     let llm_api_key = env::var("llm_api_key").unwrap_or("LLAMAEDGE".to_string());
 
     //  The soft character limit of the input context size
